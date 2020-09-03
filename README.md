@@ -14,7 +14,7 @@ Project/Repo:
 
 [![MIT License][license_img]][license_ref]
 [![Supported Python Versions][pyversions_img]][pyversions_ref]
-[![CalVer 2020.1001][version_img]][version_ref]
+[![CalVer 2020.1002][version_img]][version_ref]
 [![PyPI Version][pypi_img]][pypi_ref]
 [![PyPI Downloads][downloads_img]][downloads_ref]
 
@@ -217,7 +217,7 @@ This sorting even works correctly in JavaScript!
 [downloads_img]: https://pepy.tech/badge/lexid/month
 [downloads_ref]: https://pepy.tech/project/lexid
 
-[version_img]: https://img.shields.io/static/v1.svg?label=CalVer&message=2020.1001&color=blue
+[version_img]: https://img.shields.io/static/v1.svg?label=CalVer&message=2020.1002&color=blue
 [version_ref]: https://pypi.org/project/pycalver/
 
 [pyversions_img]: https://img.shields.io/pypi/pyversions/lexid.svg

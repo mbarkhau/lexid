@@ -81,7 +81,7 @@ PEP440, it may be better to start your sequence with 1001, instead of
 0001.
 """
 
-__version__ = "2020.1001"
+__version__ = "2020.1002"
 
 
 MINIMUM_ID = "0"
