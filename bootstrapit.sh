@@ -23,7 +23,7 @@ GIT_REPO_DOMAIN="gitlab.com"
 PACKAGE_NAME="lexid"
 # MODULE_NAME="my_package_name"
 
-# PACKAGE_VERSION="2020.1004"
+# PACKAGE_VERSION="2020.1005"
 # PACKAGE_VERSION="v0.1.0"
 PACKAGE_VERSION="$(date +'%Y.1001-alpha')"
 
