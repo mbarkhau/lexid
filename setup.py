@@ -55,7 +55,10 @@ package_dir = {"": "src"}
 
 is_lib3to6_fix_required = (
     any(arg.startswith("bdist") for arg in sys.argv)
-    and "Programming Language :: Python :: 2.7" in classifiers
+    and (
+        "Programming Language :: Python :: 2.7" in classifiers
+        or "Programming Language :: Python :: 2" in classifiers
+    )
 )
 
 
