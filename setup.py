@@ -80,7 +80,7 @@ setuptools.setup(
     author="Manuel Barkhau",
     author_email="mbarkhau@gmail.com",
     url="https://github.com/mbarkhau/lexid",
-    version="202009.1001",
+    version="2020.1001",
     keywords="lexical build number",
     description="Variable width build numbers with lexical ordering.",
     long_description=long_description,
