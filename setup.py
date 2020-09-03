@@ -1,5 +1,5 @@
 # This file is part of the lexid project
-# https://gitlab.com/mbarkhau/lexid
+# https://github.com/mbarkhau/lexid
 #
 # Copyright (c) 2020 Manuel Barkhau (mbarkhau@gmail.com) - MIT License
 # SPDX-License-Identifier: MIT
@@ -79,7 +79,7 @@ setuptools.setup(
     license="MIT",
     author="Manuel Barkhau",
     author_email="mbarkhau@gmail.com",
-    url="https://gitlab.com/mbarkhau/lexid",
+    url="https://github.com/mbarkhau/lexid",
     version="202009.1001",
     keywords="lexical build number",
     description="Variable width build numbers with lexical ordering.",

@@ -1,12 +1,13 @@
-# This file is part of the pycalver project
-# https://gitlab.com/mbarkhau/pycalver
+# This file is part of the lexid project
+# https://github.com/mbarkhau/lexid
 #
 # Copyright (c) 2020 Manuel Barkhau (mbarkhau@gmail.com) - MIT License
 # SPDX-License-Identifier: MIT
+
 """A scheme for lexically ordered numerical ids.
 
-Throughout the sequence this expression remains true, whether you
-are dealing with integers or strings:
+Throughout the sequence of ids, this expression will always be true,
+whether you are dealing with integers or strings:
 
     older_id < newer_id
 
@@ -118,6 +119,9 @@ def next_id(prev_id: str) -> str:
     else:
         _next_id_str = str(_maybe_next_id_val * 11)
     return _next_id_str
+
+
+incr = next_id
 
 
 def ord_val(lex_id: str) -> int:

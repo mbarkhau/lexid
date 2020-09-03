@@ -1,6 +1,14 @@
 # [lexid][repo_ref]
 
-`lexid` is a micro library to increment numerical ids, such that the new id will always be lexically later than the previous. In other words, sorting a list of these ids will always produce the same ordering, whether the sort is lexical or numerical. Such ids can be useful as build or version numbers.
+`lexid` is a micro library to increment lexically ordered numerical ids.
+
+Throughout the sequence of ids, this expression will always be true, whether you are dealing with integers or strings:
+
+    older_id < newer_id
+
+The left most character/digit is only used to maintain lexical order, so that the position in the sequence is maintained in the remaining digits.
+
+Such ids can be useful as build or version numbers, which are often displayed by tooling which does not understand their correct ordering.
 
 Project/Repo:
 
@@ -24,12 +32,60 @@ Code Quality/CI:
 | Manuel Barkhau (mbarkhau@gmail.com) | author/maintainer | 2020-09 | -     |
 
 
+## Usage
+
+```
+$ pip install lexid
+$ lexid_incr 1001
+1002
+$ lexid_incr 1999
+22000
+$ lexid_incr 1
+22
+$ lexid_incr 1 -n 100
+22
+..
+28
+29
+330
+331
+...
+398
+399
+4400
+4401
+...
+```
+
+In Python.
+
+```
+>>> import lexid
+>>> lexid.incr("1")
+'22'
+>>> lexid.incr("0001")
+'0002'
+>>> lexid.incr("0999")
+'11000'
+```
+
+To avoid possible zero truncation issues (e.g. with "0001" -> "1") and to reduce rollovers, start at a higher number:
+
+```
+>>> lexid.incr("1001")
+'1002'
+>>> lexid.incr("1002")
+'1003'
+>>> lexid.incr("1999")
+'22000'
+```
+
+
 ## Lexical Ids
 
-The build number padding may eventually be exhausted. In order to preserve
-lexical ordering, build numbers for the `{build_no}` pattern are
-incremented in a special way. Examples will perhaps illustrate more
-clearly.
+The key thing to look at is how padding may eventually be exhausted.
+In order to preserve lexical ordering, build numbers are incremented
+in a special way. Examples will perhaps illustrate more clearly.
 
 ```python
 "0001"
@@ -103,7 +159,7 @@ non issue, but it's better to not have to think about it.
 Just as an example of why lexical ordering is a nice property to have,
 there are lots of software which read git tags, but which have no logic to
 parse version strings. This software can nonetheless order the version tags
-correctly using commonly available lexical ordering. At the most basic
+correctly using commonly used lexical ordering. At the most basic
 level it can allow you to use the UNIX `sort` command, for example to parse
 VCS tags.
 
@@ -119,7 +175,7 @@ v0.10.0
 v0.11.0
 v0.9.0
 
-$ printf "0998\n0999\n11000\n11001\n11002\n" | sort
+$ lexid_incr 0997 -n 5 | sort
 0998
 0999
 11000
@@ -135,7 +191,7 @@ This sorting even works correctly in JavaScript!
 ["0998", "0999", "11000", "11001", "11002"]
 ```
 
-[repo_ref]: https://gitlab.com/mbarkhau/lexid
+[repo_ref]: https://github.com/mbarkhau/lexid
 
 [github_build_img]: https://github.com/mbarkhau/lexid/workflows/CI/badge.svg
 [github_build_ref]: https://github.com/mbarkhau/lexid/actions?query=workflow%3ACI
@@ -147,7 +203,7 @@ This sorting even works correctly in JavaScript!
 [codecov_ref]: https://mbarkhau.gitlab.io/lexid/cov
 
 [license_img]: https://img.shields.io/badge/License-MIT-blue.svg
-[license_ref]: https://gitlab.com/mbarkhau/lexid/blob/master/LICENSE
+[license_ref]: https://github.com/mbarkhau/lexid/blob/master/LICENSE
 
 [mypy_img]: https://img.shields.io/badge/mypy-checked-green.svg
 [mypy_ref]: https://mbarkhau.gitlab.io/lexid/mypycov

@@ -1,5 +1,5 @@
-# Changelog for https://gitlab.com/mbarkhau/lexid
+# Changelog for https://github.com/mbarkhau/lexid
 
-## v202009.1001-alpha
+## v202009.1001
 
- - Initial release
+ - Initial release (extracted from pycalver)
