@@ -57,8 +57,8 @@ CONDA_ENV_BIN_PYTHON_PATHS := \
 empty :=
 literal_space := $(empty) $(empty)
 
-BDIST_WHEEL_PYTHON_TAG := \
-	$(subst python,py,$(subst $(literal_space),.,$(subst .,,$(subst =,,$(SUPPORTED_PYTHON_VERSIONS)))))
+# BDIST_WHEEL_PYTHON_TAG := py2.py3
+BDIST_WHEEL_PYTHON_TAG := py2.py3
 
 SDIST_FILE_CMD = ls -1t dist/*.tar.gz | head -n 1
 
@@ -403,7 +403,7 @@ test:
 
 	rm -rf build/test_wheel;
 	mkdir -p build/test_wheel;
-	$(DEV_ENV_PY) setup.py bdist_wheel --python-tag=py2.py3 \
+	$(DEV_ENV_PY) setup.py bdist_wheel --python-tag=$(BDIST_WHEEL_PYTHON_TAG) \
 		--dist-dir build/test_wheel;
 
 	IFS=' ' read -r -a env_py_paths <<< "$(CONDA_ENV_BIN_PYTHON_PATHS)"; \
