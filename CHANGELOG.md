@@ -1,6 +1,6 @@
 # Changelog for https://github.com/mbarkhau/lexid
 
-## 2020.1006
+## 2021.1006
 
  - Minor packaging updates
 
