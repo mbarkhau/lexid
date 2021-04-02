@@ -1,7 +1,7 @@
 # This file is part of the lexid project
 # https://github.com/mbarkhau/lexid
 #
-# Copyright (c) 2020-2020 Manuel Barkhau (mbarkhau@gmail.com) - MIT License
+# Copyright (c) 2020-2021 Manuel Barkhau (mbarkhau@gmail.com) - MIT License
 # SPDX-License-Identifier: MIT
 
 """A scheme for lexically ordered numerical ids.
@@ -81,7 +81,7 @@ PEP440, it may be better to start your sequence with 1001, instead of
 0001.
 """
 
-__version__ = "2020.1005"
+__version__ = "2021.1006"
 
 
 MINIMUM_ID = "0"
