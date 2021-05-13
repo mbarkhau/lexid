@@ -14,3 +14,7 @@
 # https://www.python.org/dev/peps/pep-0508/#environment-markers
 
 typing;python_version<"3.5"
+
+# cli is just a toy, so don't make people depend on click
+# click<8.0; python_version < "3.6"
+# click; python_version >= "3.6"
